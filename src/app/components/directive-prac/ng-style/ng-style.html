@@ -1,0 +1,17 @@
+<p>ng-style Example!</p>
+<div class="row">
+  <div class="col-4 p-3 fw-bold" [ngStyle]="{ color: div1BackColor }">Div1</div>
+  <div class="col-4 p-3 fw-bold" [ngStyle]="{ color: ischecked === true ? 'blue' : 'red' }">
+    Div2
+  </div>
+  <div class="col-4 p-3 fw-bold" [ngStyle]="myCss">Div3</div>
+</div>
+<div class="row">
+  <div class="col-4 text-center">
+    <button matButton="filled" (click)="addDivColor('blue')">Primary</button>
+    <button matButton="outlined" (click)="addDivColor('gray')">Secondary</button>
+  </div>
+  <div class="col-4">
+    <mat-checkbox [(ngModel)]="ischecked"></mat-checkbox>
+  </div>
+</div>

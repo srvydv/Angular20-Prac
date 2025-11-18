@@ -1,0 +1,52 @@
+<h3>Data-binding Example!</h3>
+
+<h5>One way data binding</h5>
+<div class="row">
+  <div class="col-4">
+    1. Interpolation
+    <p class="mt-3">FirstName => {{ firstName }}</p>
+  </div>
+  <div class="col-4">
+    2. Property Binding
+    <div class="mt-3">
+      <mat-form-field appearance="outline">
+        <mat-label>Roll No</mat-label>
+        <input matInput type="text" [value]="firstName" />
+      </mat-form-field>
+    </div>
+    <div class="mt-3">
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput type="text" [placeholder]="myPlaceHolder" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-4">
+    3. Event Binding
+    <div>
+      <button matButton="filled" (click)="handleClickSave()">Save</button>
+      <button matButton="outlined" (click)="handleClickCancel()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<h5 class="mt-5">Two way data binding</h5>
+<div class="row">
+  <div class="col-4 mt-3">
+    <mat-form-field appearance="outline">
+      <mat-label>Ng Model use</mat-label>
+      <input type="text" matInput [(ngModel)]="firstName" />
+    </mat-form-field>
+  </div>
+  <div class="col-4 mt-3">
+    <mat-form-field appearance="outline">
+      <mat-label>Cars</mat-label>
+      <mat-select [(ngModel)]="car">
+        <mat-option value="BMW">BMW</mat-option>
+        <mat-option value="Volvo">Volvo</mat-option>
+        <mat-option value="Honda">Honda</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="mt-2">Selected Car => {{ car }}</p>
+  </div>
+</div>

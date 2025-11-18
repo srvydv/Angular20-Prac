@@ -1,0 +1,18 @@
+<p>ng-if Example!</p>
+
+@if (div1Visible) {
+<div class="row">
+  <div class="col-6">
+    <div class="bg-success p-3">Div 1</div>
+  </div>
+</div>
+} @else {
+<p>Click on show button to show the div</p>
+}
+
+<div class="row mt-2">
+  <div class="col-6 text-center">
+    <button matButton="outlined" (click)="hideDiv1()">Hide</button>
+    <button matButton="filled" class="mx-3" (click)="showDiv1()">Show</button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<p>ng-class Example!</p>
+
+<div class="row text-light">
+  <div class="col-6 p-3" [ngClass]="divBgColor">Div 1</div>
+  <div class="col-6 p-3" [ngClass]="isChecked === true ? 'bg-success' : 'bg-secondary'">Div 2</div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-6 text-center">
+    <button matButton="filled" (click)="addDiv1Color('bg-primary')">Success</button>
+    <button
+      matButton="outlined"
+      (click)="addDiv1Color('bg-danger')"
+      class="bg-danger mx-3"
+      style="color: white"
+    >
+      Error
+    </button>
+  </div>
+  <div class="col-6">
+    <mat-checkbox [(ngModel)]="isChecked"></mat-checkbox>
+  </div>
+</div>

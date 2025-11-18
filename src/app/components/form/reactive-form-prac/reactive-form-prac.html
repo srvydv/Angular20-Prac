@@ -1,0 +1,71 @@
+<h3>Reactive Driven Form</h3>
+<div class="main-container">
+  <form [formGroup]="userFrom" (ngSubmit)="onSave()">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <mat-form-field appearance="outline">
+          <mat-label>First name</mat-label>
+          <input type="text" matInput formControlName="firstName" autocomplete="off" />
+          @if (userFrom.controls['firstName'].errors?.['required'] &&
+          userFrom.controls['firstName'].touched) {
+          <mat-error>First Name is required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-form-field appearance="outline">
+          <mat-label>last name</mat-label>
+          <input type="text" matInput formControlName="lastName" autocomplete="new-password" />
+          @if (userFrom.controls['lastName'].errors?.['required'] &&
+          userFrom.controls['lastName'].touched) {
+          <mat-error>Last Name is required</mat-error>
+          } @else if (userFrom.controls['lastName'].errors?.['minlength'] &&
+          userFrom.controls['lastName'].touched) {
+          <mat-error>Minimum 5 characters required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="userName" autocomplete="off" />
+          @if (userFrom.controls['userName'].errors?.['required'] &&
+          userFrom.controls['userName'].touched) {
+          <mat-error>User Name is required</mat-error>
+          } @else if (userFrom.controls['userName'].errors?.['email'] &&
+          userFrom.controls['userName'].touched) {
+          <mat-error>Invalid user name</mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <mat-form-field appearance="outline">
+          <mat-label>City</mat-label>
+          <input type="text" matInput formControlName="city" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 mb-3">
+        <mat-form-field appearance="outline">
+          <mat-label>State</mat-label>
+          <mat-select formControlName="state">
+            @for (state of stateList; track state) {
+            <mat-option [value]="state">{{ state }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 mb-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Zip Code</mat-label>
+          <input type="text" matInput formControlName="zipCode" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <mat-checkbox formControlName="isTermsAgree">Agree to terms and conditions</mat-checkbox>
+    </div>
+    <button matButton="filled" type="submit">Submit form</button>
+  </form>
+</div>

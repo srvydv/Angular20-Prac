@@ -1,0 +1,18 @@
+<p class="mt-4">ng-for Example!</p>
+
+<div class="row">
+  <div class="col-6">
+    <ul>
+      @for (item of cityList; track $index) {
+      <li>{{ item }}</li>
+      } @empty {
+      <p>No city List</p>
+      }
+    </ul>
+  </div>
+  <div class="col-6">
+    @for (item of cityList; track $index) {
+    <button matButton="outlined" class="m-1">{{ $index }}</button>
+    }
+  </div>
+</div>
