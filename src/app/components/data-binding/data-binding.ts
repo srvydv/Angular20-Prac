@@ -18,9 +18,7 @@ export class DataBinding {
   myPlaceHolder: string = 'Enter full name';
   car: string = '';
 
-  constructor(private snackbar: Snackbar) {
-    console.log(this.firstName);
-  }
+  constructor(private snackbar: Snackbar) {}
 
   handleClickSave() {
     this.snackbar.success('Clicked on Save');

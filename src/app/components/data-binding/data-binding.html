@@ -10,21 +10,27 @@
     2. Property Binding
     <div class="mt-3">
       <mat-form-field appearance="outline">
-        <mat-label>Roll No</mat-label>
+        <mat-label>Value</mat-label>
         <input matInput type="text" [value]="firstName" />
       </mat-form-field>
     </div>
     <div class="mt-3">
       <mat-form-field appearance="outline">
-        <mat-label>Full Name</mat-label>
+        <mat-label>Placeholder</mat-label>
         <input matInput type="text" [placeholder]="myPlaceHolder" />
+      </mat-form-field>
+    </div>
+    <div class="mt-3">
+      <mat-form-field appearance="outline">
+        <mat-label>Disabled</mat-label>
+        <input matInput type="text" [disabled]="true" />
       </mat-form-field>
     </div>
   </div>
   <div class="col-4">
     3. Event Binding
     <div>
-      <button matButton="filled" (click)="handleClickSave()">Save</button>
+      <button matButton="filled" (click)="handleClickSave()" class="mx-3">Save</button>
       <button matButton="outlined" (click)="handleClickCancel()">Cancel</button>
     </div>
   </div>

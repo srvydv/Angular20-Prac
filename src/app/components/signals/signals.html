@@ -1,19 +1,26 @@
-<h3>signals works!</h3>
+<div class="row">
+  <div class="col-md-6">
+    <h3>Signals</h3>
 
-<p>{{ firstName() }}</p>
+    <p>{{ firstName() }}</p>
 
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Name</mat-label>
-    <input matInput type="text" [value]="firstName()" />
-  </mat-form-field>
-</p>
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [value]="firstName()" />
+        </mat-form-field>
+      </div>
+    </div>
 
-<p>Course Name: {{ courseName }}</p>
-<p>Roll No: {{ rollNo() }}</p>
+    <p>Course Name: {{ courseName }}</p>
+    <p>Roll No: {{ rollNo() }}</p>
 
-<button matButton="filled" (click)="changeCourseName()">Change Name</button>
-<button matButton="outlined" (click)="incrementRollNo()">incrementRollNo</button>
-
-<h3>Linked Signals</h3>
-<app-linked-signals></app-linked-signals>
+    <button matButton="filled" (click)="changeCourseName()">Change Course Name</button>
+    <button matButton="outlined" (click)="incrementRollNo()">increment Roll No</button>
+  </div>
+  <div class="col-md-6">
+    <h3>Linked Signals</h3>
+    <app-linked-signals></app-linked-signals>
+  </div>
+</div>

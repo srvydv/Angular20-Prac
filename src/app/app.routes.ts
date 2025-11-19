@@ -40,7 +40,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'getApi',
-    loadComponent: () => import('./components/API/get-api/get-api').then((c) => c.GetApi),
+    path: 'apiCalls',
+    loadComponent: () => import('./components/api-calls/api-calls').then((c) => c.ApiCalls),
   },
 ];

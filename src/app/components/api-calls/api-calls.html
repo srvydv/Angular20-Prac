@@ -1,0 +1,80 @@
+<div class="main-container">
+  <button type="button" matButton="filled" (click)="onAddEditItem()" class="f-r">
+    <mat-icon>add</mat-icon>
+    Add Post
+  </button>
+  @if (postList().length) {
+  <div class="mt-3">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top: 20px">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.id }}
+        </td>
+      </ng-container>
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.title }}
+        </td>
+      </ng-container>
+
+      <!-- Body Column -->
+      <ng-container matColumnDef="body">
+        <th mat-header-cell *matHeaderCellDef>Body</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.body }}
+        </td>
+      </ng-container>
+
+      <!-- userId Column -->
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef>UserId</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.userId }}
+        </td>
+      </ng-container>
+
+      <!-- userId Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="d-flex">
+            <button
+              matIconButton
+              aria-label="Delete Row"
+              type="button"
+              class="red"
+              matTooltip="Delete"
+              (click)="onDeleteItem(element.id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button
+              matIconButton
+              aria-label="Edit"
+              type="button"
+              class="blue"
+              matTooltip="Edit"
+              (click)="onAddEditItem(element)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
+    </table>
+
+    <mat-paginator #paginator [length]="postList().length" [pageSize]="10" showFirstLastButtons>
+    </mat-paginator>
+  </div>
+  } @else if (!postList().length) { Do you want to see all posts ?
+  <button type="button" matButton="outlined" (click)="onShowAllPosts()">Show Posts</button>
+  }
+</div>

@@ -1,0 +1,44 @@
+<div>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <h2 mat-dialog-title>{{ dialogData.id ? 'Update Post' : 'Add Post' }}</h2>
+    <mat-dialog-content>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input type="text" matInput formControlName="title" autocomplete="off" />
+            @if (postForm.controls['title'].errors?.['required'] &&
+            postForm.controls['title'].touched) {
+            <mat-error>Title is required</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Body</mat-label>
+            <input type="text" matInput formControlName="body" autocomplete="off" />
+            @if (postForm.controls['body'].errors?.['required'] &&
+            postForm.controls['body'].touched) {
+            <mat-error>Body is required</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>User ID</mat-label>
+            <input type="number" matInput formControlName="userId" autocomplete="off" />
+            @if (postForm.controls['userId'].errors?.['required'] &&
+            postForm.controls['userId'].touched) {
+            <mat-error>User id is required</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button matButton="elevated" type="reset" (click)="onReset()">Reset</button>
+      <button matButton="outlined" (click)="onClickCancel()" type="button">Cancel</button>
+      <button matButton="filled" type="submit">{{ dialogData.id ? 'Update' : 'Add' }}</button>
+    </mat-dialog-actions>
+  </form>
+</div>

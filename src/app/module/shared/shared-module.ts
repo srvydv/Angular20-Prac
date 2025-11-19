@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltip } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -33,6 +35,8 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatTooltip,
     MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
   ],
   exports: [
     CommonModule,
@@ -50,6 +54,8 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatTooltip,
     MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
   ],
 })
 export class SharedModule {}
