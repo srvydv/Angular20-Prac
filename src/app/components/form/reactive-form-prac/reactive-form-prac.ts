@@ -31,7 +31,7 @@ export class ReactiveFormPrac {
   }
 
   onSave() {
-    this.userFrom.markAsTouched();
+    this.userFrom.markAllAsTouched();
     if (this.userFrom.invalid) {
       this.snackbar.error('Please fill all the mandatory details!');
       return;

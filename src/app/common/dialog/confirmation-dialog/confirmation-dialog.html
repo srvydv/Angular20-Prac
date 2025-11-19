@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{ dialogData.title }}</h2>
+<mat-dialog-content>
+  <p>{{ dialogData.message }}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton="outlined" (click)="onNoClick()" type="button">
+    {{ dialogData.cancelButtonText }}
+  </button>
+  <button matButton="filled" (click)="onOkClick()" type="button">
+    {{ dialogData.okButtonText }}
+  </button>
+</mat-dialog-actions>

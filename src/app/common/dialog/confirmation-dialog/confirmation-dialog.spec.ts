@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GetApi } from './get-api';
+import { ConfirmationDialog } from './confirmation-dialog';
 
-describe('GetApi', () => {
-  let component: GetApi;
-  let fixture: ComponentFixture<GetApi>;
+describe('ConfirmationDialog', () => {
+  let component: ConfirmationDialog;
+  let fixture: ComponentFixture<ConfirmationDialog>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GetApi]
+      imports: [ConfirmationDialog]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GetApi);
+    fixture = TestBed.createComponent(ConfirmationDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

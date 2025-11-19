@@ -38,6 +38,6 @@ export class App {
     { path: 'signals', name: 'Signals', icon: 'signal_cellular_alt' },
     { path: 'templateDriverForm', name: 'Template Form', icon: 'input' },
     { path: 'reactiveFromPrac', name: 'Reactive From', icon: 'transform' },
-    { path: 'getApi', name: 'Get API', icon: 'get_app' },
+    { path: 'apiCalls', name: 'API Calls', icon: 'network_check' },
   ];
 }

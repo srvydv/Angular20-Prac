@@ -7,16 +7,23 @@ import { Posts } from '../model/posts.model';
   providedIn: 'root',
 })
 export class ApiCall {
-  private apiUrl: string = 'https://json-placeholder.mock.beeceptor.com';
-  private typicodeApiUrl: string = 'https://jsonplaceholder.typicode.com';
+  private apiUrl: string = 'https://jsonplaceholder.typicode.com';
 
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/users`);
+  getAllPosts(): Observable<Posts[]> {
+    return this.http.get<Posts[]>(`${this.apiUrl}/posts`);
   }
 
   addPost(payload: Posts): Observable<Posts> {
-    return this.http.post<Posts>(`${this.typicodeApiUrl}/posts`, payload);
+    return this.http.post<Posts>(`${this.apiUrl}/posts`, payload);
+  }
+
+  editPost(id: number, payload: Posts): Observable<Posts> {
+    return this.http.put<Posts>(`${this.apiUrl}/posts/${id}`, payload);
+  }
+
+  deletePost(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/posts/${id}`);
   }
 }
